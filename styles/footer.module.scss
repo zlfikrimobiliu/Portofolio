@@ -1,0 +1,101 @@
+
+.footer{
+    margin-top:3rem;
+    padding-bottom:2rem;
+    pointer-events: auto;
+    &_main{
+      display:flex;
+      justify-content: space-between;
+      @media (max-width:600px){
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+    &_line{
+      width:100%;
+      height:2px;
+      background:#112240;
+      margin:auto;
+    }
+    .copy{
+      color:#233554;
+      font-size:.8rem;
+      @media (max-width:600px){
+        margin:auto;
+        text-align:center;
+      }
+    }
+    &_links{
+      display:flex;
+      color:#fff;
+      pointer-events: auto;
+      gap: 2rem;
+      @media (max-width:600px){
+        margin:auto;
+        gap: 1.5rem;
+      }
+      .social_link{
+        pointer-events: auto;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          transition: width 0.3s ease, height 0.3s ease;
+        }
+        
+        &:hover::before {
+          width: 60px;
+          height: 60px;
+        }
+        
+        .social_content{
+          display:flex;
+          align-items:center;
+          gap: 0.5rem;
+          font-size:.9rem;
+          cursor:pointer;
+          pointer-events: auto;
+          margin: 0;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 1;
+          
+          span {
+            font-weight: 500;
+            transition: color 0.3s ease;
+          }
+          
+          img {
+            transition: filter 0.3s ease;
+          }
+        }
+        
+        &:hover {
+          .social_content {
+            span:first-child {
+              color: #64ffda;
+            }
+            img {
+              filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.6));
+            }
+          }
+        }
+      }
+    }
+   
+   
+  }
+  

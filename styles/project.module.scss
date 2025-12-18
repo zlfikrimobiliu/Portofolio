@@ -1,0 +1,138 @@
+
+.project{
+    display:grid;
+    grid-template-columns:5fr 2fr;
+    height:auto;
+    border-radius:15px;
+    color:#e6f1ff;
+    margin-top:5rem;
+    pointer-events: auto;
+    @media (max-width:900px){
+        grid-template-columns:1fr;
+    }
+    /* Do NOT force anchors to inherit full width/height; this can block clicks */
+    a{
+        pointer-events: auto;
+        cursor: pointer;
+        width:auto;
+        height:auto;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        text-decoration:none;
+    }
+    &_image{
+        background:#112240;
+        border-top-left-radius:15px;
+        border-bottom-left-radius:15px;
+        padding:10px;
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        overflow:hidden;
+        pointer-events: auto;
+        position: relative;
+        z-index: 5;
+        @media (max-width:900px){
+            border-bottom-left-radius:0px;
+            border-top-right-radius:15px;
+        }
+        .project_link{
+            position:absolute;
+            background:#112240;
+            z-index:30; /* ensure above image */
+            outline:none;
+            border:none;
+            padding:1rem 2rem;
+            color:#e6f1ff;
+            font-family:"Poppins";
+            cursor:pointer;
+            pointer-events: auto !important;
+            left: 0;
+            top: 50%;
+            bottom: auto;
+            /* Cancel left padding (10px) of parent so it hugs the edge like before */
+            transform: translate(-10px, -50%);
+        }
+       &_box{
+        object-fit:cover;
+        height:auto;
+        overflow:hidden;
+        border-radius: 15px;
+       }
+       img{
+        object-fit:contain;
+        object-position: center center;
+        height:100%; 
+        width:100%;
+        cursor:pointer;
+        transition:.7s;
+        border-radius: 15px;
+        &:hover{
+            transform:scale(1.1);
+        }
+       }
+    }
+    &_desc{
+        background:#112240;
+        padding:20px;
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        border-top-right-radius:15px;
+        border-bottom-right-radius:15px;
+        pointer-events: auto;
+        position: relative;
+        z-index: 15; /* above left column just in case */
+        @media (max-width:900px){
+            border-top-right-radius:0px;
+            border-bottom-left-radius:15px;
+        }
+        h3{
+            color:#ccd6f6;
+            font-size:1.5rem;
+            margin:0;
+        }
+        h5{
+            font-weight:400;
+            font-size:.8rem;
+            color:#e29d07;
+        }
+        p{
+            color:#ccd6f6;
+            font-size:.9rem;
+            font-weight: 300;
+            line-height:2rem;
+            margin:0;
+            margin-top:1.5rem;
+            font-family: 'Poppins', sans-serif;
+            @media(max-width:600px){
+              font-size:.85rem;
+              line-height:2rem;
+              margin-top:1.2rem;
+            }
+        }
+        /* Correct .project_links block (was accidentally nested under img before) */
+        .project_links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            pointer-events: auto;
+            z-index: 25;
+            a {
+                pointer-events: auto !important;
+                cursor: pointer !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.4rem;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

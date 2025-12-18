@@ -1,0 +1,26 @@
+{
+  "name": "stanlee",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "core-js-pure": "^3.45.0",
+    "framer-motion": "^5.5.5",
+    "next": "^15.4.6",
+    "phosphor-react": "^1.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.46.0",
+    "three": "^0.135.0"
+  },
+  "devDependencies": {
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1"
+  }
+}
