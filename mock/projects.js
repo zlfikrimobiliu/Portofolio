@@ -51,7 +51,7 @@ export const projects = [
         text: "Simple link-in-bio page to drive traffic to WhatsApp, Shopee, YouTube and Facebook.",
         tools: "NEXTJS, REACT,",
         link: "https://www.yolective.com/links",
-        // github: "#",
+        github: "https://github.com/zlfikrimobiliu/yolective-project",
     },
 
     {
@@ -60,7 +60,7 @@ export const projects = [
         text: "Comprehensive POS solution with real-time inventory management, sales analytics, and seamless business operations. Built with modern Laravel Livewire for reactive, fast transactions.",
         tools: "LARAVEL, LIVEWIRE, PHP, REACT, ALPINE.JS, TAILWIND CSS, BOOTSTRAP, CHART.JS, JQUERY, DATATABLES, SWEETALERT2, FONT AWESOME, BOOTSTRAP ICONS, DROPZONE, FILEPOND, JSZIP, LODASH, CORE-JS",
         link: "https://pos.yolective.com/login",
-        // github: "#",
+        github: "https://github.com/zlfikrimobiliu/yolective-pos",
     },
     
 
