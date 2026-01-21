@@ -55,13 +55,12 @@ export const projects = [
     },
 
     {
-    
-        img: "/images/PRTG-DPS.png",
-        name: "PRTG Network Monitor",
-        text: "Network monitoring dashboard for devices, services, bandwidth and alerts.",
-        tools: "SNMP, WMI, NetFlow/sFlow, Packet Sniffing, HTTP(S), Ping, SSH, SQL Sensors, REST API, PowerShell/Python",
-        link: "https://prtg.dps.globalxtreme.net/",
-    //     // github: "https://github.com/ugwustanley/portfolio",
+        img: "/images/SS-Yolective-POS.png",
+        name: "Yolective POS",
+        text: "Comprehensive POS solution with real-time inventory management, sales analytics, and seamless business operations. Built with modern Laravel Livewire for reactive, fast transactions.",
+        tools: "LARAVEL, LIVEWIRE, PHP, REACT, ALPINE.JS, TAILWIND CSS, BOOTSTRAP, CHART.JS, JQUERY, DATATABLES, SWEETALERT2, FONT AWESOME, BOOTSTRAP ICONS, DROPZONE, FILEPOND, JSZIP, LODASH, CORE-JS",
+        link: "https://pos.yolective.com/login",
+        // github: "#",
     },
     
 
