@@ -21,6 +21,7 @@ export default function PortfolioSection() {
              <Project
                 key={index}
                 img={project?.img}
+                imgs={project?.imgs}
                 name={project?.name}
                 text={project?.text}
                 tools={project?.tools}

@@ -1,12 +1,42 @@
-import {  } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import WavyHand from "../images/wavy-1.png";
 import styles from "../styles/about.module.scss";
 import { helloVariant } from "../variants/index.js";
 
 export default function AboutSection() {
+  const [isDesktopHero, setIsDesktopHero] = useState(false);
+
+  const rotate = useSpring(0, { stiffness: 120, damping: 18, mass: 0.35 });
+  const lift = useSpring(0, { stiffness: 160, damping: 22, mass: 0.35 });
+
+  useEffect(() => {
+    const update = () => setIsDesktopHero(window.innerWidth >= 1101);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const handlePhotoPointerMove = useCallback(
+    (event) => {
+      if (!isDesktopHero) return;
+      const el = event.currentTarget;
+      const rect = el.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      rotate.set(x * 10);
+      lift.set(-y * 10);
+    },
+    [isDesktopHero, lift, rotate]
+  );
+
+  const resetPhotoMotion = useCallback(() => {
+    if (!isDesktopHero) return;
+    rotate.set(0);
+    lift.set(0);
+  }, [isDesktopHero, lift, rotate]);
 
   return (
 
@@ -51,12 +81,22 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className={styles.about_me_main_s2}>
-                <img
-                  src="/images/Fikri-profile.png"
-                  className={styles.about_me__memoji}
-                  layout="fill"
-                  alt="Fikri Mobiliu portrait"
-                />
+                <motion.div
+                  className={styles.about_photo_shell}
+                  rotate={isDesktopHero ? rotate : 0}
+                  y={isDesktopHero ? lift : 0}
+                  style={isDesktopHero ? { transformPerspective: 900 } : undefined}
+                  onPointerMove={handlePhotoPointerMove}
+                  onPointerLeave={resetPhotoMotion}
+                  onPointerCancel={resetPhotoMotion}
+                  onPointerUp={resetPhotoMotion}
+                >
+                  <img
+                    src={isDesktopHero ? "/images/Fikri-profile-cutout.png" : "/images/Fikri-profile.png"}
+                    className={styles.about_me__memoji}
+                    alt="Fikri Mobiliu portrait"
+                  />
+                </motion.div>
               </div>
             </div>
           </section>

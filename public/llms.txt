@@ -1,0 +1,16 @@
+# Fikri Mobiliu
+
+Official portfolio and profile for Fikri Mobiliu.
+
+## Canonical site
+- https://fikrimobiliu.site/
+
+## Profile summary
+Fikri Mobiliu is a DevSec professional focused on secure application, network, and website development.
+
+## Official social links
+- https://github.com/zlfikrimobiliu
+- https://www.instagram.com/zlfikrimobiliu/
+
+## Contact
+- mailto:fikrimobiliu@gmail.com

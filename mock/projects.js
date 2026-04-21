@@ -36,6 +36,17 @@ export const projects = [
         link: "https://rycroft.id/",
         github: "https://github.com/zlfikrimobiliu/Rycroft-FE",
     },
+    
+    {
+        img: "/images/SS-pos-bazzar.png",
+        imgs: ["/images/SS-pos-bazzar-login.png", "/images/SS-pos-bazzar.png"],
+        name: "POS Bazzar",
+        text: "POS Bazzar is a point-of-sale login portal used for cashier and retail operation access.",
+        tools: "VUE.JS, APACHE HTTP SERVER, GOOGLE ANALYTICS, UBUNTU",
+        link: "https://bazzar.softcomp.io/",
+        // github: "#",
+    },
+
     {
         img: "/images/Tabungan-fikri.png",
         name: "DigiSave",
